@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Lemon&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  font-family: sans-serif, Arial;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+:root {
+  --bg: #FFEFD8;
+  --green-box: #639577;
+  --orange-box: #F5AF46;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+body {
+  background: var(--bg);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 30px 0 0 30px;
+  z-index: 1000;
+}
+
+.sidebar-button {
+  background: none;
+  text-align: left;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: fit-content;
+  width: 100%;
+  display: flex;
+  padding: 0 140px;
+  gap: 180px;
+}
+
+/*styling for the orange box at the background*/
+.side-box {
+  background: var(--orange-box);
+  height: 100%;
+  width: 350px;
+  position: absolute;
+  left: calc(50% - (350px / 2));
+  z-index: -1;
+}
+
+.projects-image, .projects-details {
+  margin-top: 100px;
+}
+
+/*styling for the big image*/
+.projects-image {
+  width: 600px;
+  height: 500px;
+  position: relative;
+}
+
+.projects-image img {
+  width: 600px;
+  height: 500px;
+}
+
+.projects-image-h1 {
+  font-size: 150px;
+  font-family: Lalezar;
+  margin: 0;
+  position: absolute;
+  left: 20%;
+  top: -25%;
+}
+
+/*styling for projects details*/
+.projects-details {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-top: 90px;
+}
+
+/*styling for each project part*/
+.projects-detail {
+  position: relative;
+  width: 390px;
+  min-height: 300px;
+  background: var(--green-box);
+  border-radius: 2px;
+  padding: 20px 10px 10px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.projects-detail-h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.projects-detail-img {
+  width: 150px;
+  height: 250px;
+  position: absolute;
+  left: -30%;
+  top: -15%;
+}
+
+@media (max-width: 1300px) {
+  main {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .side-box {
+    left: 0;
+  }
+
+  .projects-details {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .transform {
+    background: var(--green-box);
+    padding: 60px 50px;
+    height: 100%;
+    transform: translateX(0);
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .projects-image-h1 {
+    font-size: 100px;
+  }
+
+  main {
+    padding: 0 0 20px 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .side-box {
+    width: 120px;
+  }
+
+  .projects-image {
+    width: 67%;
+    height: 203px;
+    margin-left: calc((((100% - 40px) - 45%) / 2) * (-1));
+  }
+
+  .projects-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .projects-image-h1 {
+    font-size: 50px;
+    left: unset;
+    right: -20%;
+    top: -20%;
+  }
+
+  .projects-details {
+    gap: 200px;
+    width: calc(100% - 40px);
+  }
+
+  .projects-detail {
+    width: 100%;
+    padding: 80px 10px 10px 10px;
+  }
+
+  .projects-detail-img {
+    right: 0;
+    left: unset;
+    top: -60%;
+  }
+}
